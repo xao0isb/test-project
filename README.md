@@ -20,6 +20,11 @@
 
 ## Локальный запуск:
 
+Зависимости:
+```bash
+bundle
+```
+
 База данных:
 ```bash
 rails db:prepare
@@ -29,7 +34,7 @@ rails db:prepare
 
 DelayedJob:
 ```bash
-RAILS_ENV=test bin/delayed_job start
+RAILS_ENV=test bin/delayed_job run
 ```
 
 Сервер:
