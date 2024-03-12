@@ -1,0 +1,13 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ru:
+  devise:
+    failure:
+      invalid: Неверный %{authentication_keys} или пароль.
+      not_found_in_database: Неверный %{authentication_keys} или пароль.
+      unauthenticated: Требуется авторизация.
+    registrations:
+      signed_up: Регистрация прошла успешно!
+    sessions:
+      signed_in: Вход был успешно выполнен!
+      signed_out: Вы вышли из системы!

@@ -1,0 +1,13 @@
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/json-2.7.1/ext/json
+/home/xao0isb/.rbenv/versions/3.1.2/bin/ruby -I /home/xao0isb/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240310-16680-qb7271.rb extconf.rb
+creating Makefile
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/json-2.7.1/ext/json
+make DESTDIR\= clean
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/json-2.7.1/ext/json
+make DESTDIR\=
+make: Nothing to be done for 'all'.
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/json-2.7.1/ext/json
+make DESTDIR\= install

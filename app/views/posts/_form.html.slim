@@ -1,0 +1,26 @@
+= simple_form_for post, data: { turbo: false } do |f|
+  = f.input :title
+
+  .form-group
+    = f.label "Изображения"
+    br
+    = f.file_field :images, multiple: true
+  .form-group
+    = f.label "Файлы"
+    br
+    = f.file_field :files, multiple: true
+
+  = f.input :content
+
+  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+  = f.input :region_id, as: :hidden, input_html: { value: current_user.region.id }
+
+  - if current_user.admin?
+    = f.association :region, selected: 1
+
+  .form-buttons
+    - @submit_button_text = current_user.admin? ? "Создать пост" : "Отправить на проверку"
+    = f.button :submit, @submit_button_text, name: "commit", class: "btn-primary me-3"
+
+    - @save_as_draft_button_text = post.draft? ? "Сохранить" : "Сохранить как черновик"
+    = f.button :submit, @save_as_draft_button_text, name: "draft", class: "btn btn-secondary"

@@ -1,0 +1,33 @@
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0
+/home/xao0isb/.rbenv/versions/3.1.2/bin/ruby -I /home/xao0isb/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240312-9667-g2iz3f.rb extconf.rb
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0
+make DESTDIR\= clean
+make[1]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/src'
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/src'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+make[2]: *** test/unit: No such file or directory.  Stop.
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+make[1]: *** [Makefile:74: clean] Error 2
+make[1]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+make: *** [Makefile:51: clean] Error 2
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0
+make DESTDIR\=
+# @echo "Compiling ext/text_width ..."
+# rake compile
+Compiling libxlsxwriter ...
+make[1]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/minizip'
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/minizip'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/tmpfileplus'
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/tmpfileplus'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/md5'
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/third_party/md5'
+make[2]: Entering directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/src'
+make[2]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter/src'
+make[1]: Leaving directory '/home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0/libxlsxwriter'
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/fast_excel-0.5.0
+make DESTDIR\= install

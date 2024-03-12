@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title TestProject
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+  body.d-flex.flex-column.h-100
+    - if current_user.present?
+      header.mb-2
+        .container
+          = render "layouts/navigation/menu"
+    main.pt-4
+      .container
+        = render "layouts/flash"
+        = yield

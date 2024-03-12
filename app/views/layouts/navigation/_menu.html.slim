@@ -1,0 +1,22 @@
+nav.navbar.border-bottom
+  ul.nav.nav-pills
+    li.nav-item.me-4
+      = link_to "Главная", root_url
+    li.nav-item.me-3
+      = link_to "Создать новый пост", new_post_url
+    li.nav-item.me-3
+      = link_to "Мои посты", my_posts_url
+    li.nav-item.me-3
+      = link_to "Мои черновики", my_drafts_url
+    - if current_user.admin?
+      li.nav-item
+        = link_to "Добавить администратора", new_admin_path
+  .d-flex
+    = link_to( \
+      "Выйти",
+      destroy_user_session_path,
+      method: :delete,
+      data: { turbo_method: :delete } \
+    )
+    .ms-3
+      = current_user.login

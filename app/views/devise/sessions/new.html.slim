@@ -1,0 +1,10 @@
+h1.text-center.mb-4 Вход
+
+= simple_form_for resource, url: session_path(resource_name), data: { turbo: false } do |f|
+  = f.input :login, autofocus: true
+  = f.input :password
+  = f.input :remember_me, as: :boolean
+
+  .form-buttons
+  = f.button :submit, "Войти", class: "btn-primary me-3"
+  = link_to "Зарегистрироваться", new_registration_path(resource_name)

@@ -1,0 +1,63 @@
+- unless current_user.admin?
+  h1 = @region_name
+
+/ TODO: rewrite to normal filter because we get and render redundant records
+div[id="tabsButtons" class="d-flex align-items-center"]
+  | Сортировать по:
+  .ms-3
+    - if current_user.admin?
+      button[data-tab-button-id="region" data-tab-id="region" class="btn btn-link"] Региону
+    button[data-tab-button-id="creator" data-tab-id="creator" class="btn btn-link"] Создателю
+    button[data-tab-button-id="created_at" data-tab-id="created_at" data-active="true" class="btn btn-link"]
+      = current_user.admin? ? "Дате создания" : "Дате рассмотрения/создания"
+    - unless current_user.admin?
+      button[data-tab-button-id="status" data-tab-id="status" class="btn btn-link"] Статусу
+
+div[id="tabs" class="mt-3"]
+  - @download_excel_link_text = "Скачать excel выгрузку"
+  - @download_excel_link_classes = "btn btn-success mb-1"
+
+  - if current_user.admin?
+    div[data-tab-id="region"]
+      - sorted_posts = @posts.sort_by_region
+
+      = link_to( \
+        @download_excel_link_text,
+        reports_excel_url({ post_ids: sorted_posts.pluck(:id) }),
+        method: :post,
+        data: { turbo_method: :post },
+        class: @download_excel_link_classes \
+      )
+      = render "layouts/posts/feed", posts: sorted_posts
+
+  div[data-tab-id="creator"]
+    - sorted_posts = @posts.sort_by_creator
+
+    - if current_user.admin?
+      = link_to( \
+        @download_excel_link_text,
+        reports_excel_url({ post_ids: sorted_posts.pluck(:id) }),
+        method: :post,
+        data: { turbo_method: :post },
+        class: @download_excel_link_classes \
+      )
+    = render "layouts/posts/feed", posts: sorted_posts
+
+  div[data-tab-id="created_at"]
+    - sorted_posts = @posts.sort_by_created_at
+
+    - if current_user.admin?
+      = link_to( \
+        @download_excel_link_text,
+        reports_excel_url({ post_ids: sorted_posts.pluck(:id) }),
+        method: :post,
+        data: { turbo_method: :post },
+        class: @download_excel_link_classes \
+      )
+    = render "layouts/posts/feed", posts: sorted_posts
+
+  - unless current_user.admin?
+    div[data-tab-id="status"]
+      = render "layouts/posts/feed", posts: @posts.sort_by_status
+
+= javascript_include_tag "views/layouts/tabs"

@@ -1,0 +1,9 @@
+ul
+  - files.each do |file|
+    li
+      = link_to( \
+        file.identifier,
+        download_file_path({ post_id: post.id, file_path: file.current_path }),
+        method: :post,
+        data: { turbo_method: :post } \
+      )

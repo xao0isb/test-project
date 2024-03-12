@@ -1,0 +1,6 @@
+.mb-4
+  h1 Мои посты
+  - unless current_user.admin?
+    span.small.text-muted Не включая черновиков
+
+= render "layouts/posts/feed", posts: @posts

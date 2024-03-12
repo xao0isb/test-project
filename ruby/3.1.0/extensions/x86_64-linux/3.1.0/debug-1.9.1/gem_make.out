@@ -1,0 +1,16 @@
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/debug-1.9.1/ext/debug
+/home/xao0isb/.rbenv/versions/3.1.2/bin/ruby -I /home/xao0isb/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240310-16680-d87ljm.rb extconf.rb
+creating Makefile
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/xao0isb/Desktop/test_project_1/ruby/3.1.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20240310-16680-m4t50/debug

@@ -1,0 +1,59 @@
+- if current_user.admin?
+  b = @post.region.name
+
+h1 = @post.title
+
+- unless @post.images.empty?
+  h2.h5 Прикрепленные изображения
+  = render "layouts/images/render", images: @post.images
+
+- unless @post.files.empty?
+  h2.h5 Прикрепленные файлы
+  = render "layouts/files/render", post: @post, files: @post.files
+
+p = @post.content
+
+span.me-2 = @post.status_in_words
+span.me-2 = time_ago_in_words @post.created_at
+span = @post.creator.full_name
+
+- if current_user != @post.creator && current_user.admin? && @post.status == "review"
+  .mt-3
+    = link_to( \
+      "Утвердить",
+      approve_post_url(@post),
+      method: :patch,
+      data: { turbo_method: :patch },
+      class: "btn btn-success me-2" \
+    )
+    = link_to( \
+      "Отклонить",
+      decline_post_url(@post),
+      method: :patch,
+      data: { turbo_method: :patch },
+      class: "btn btn-danger" \
+    )
+
+- if current_user == @post.creator && @post.status == "draft"
+  .mt-3
+  - @submit_draft_link_text = current_user.admin? ? "Опубликовать" : "Отправить на проверку"
+  = link_to( \
+    @submit_draft_link_text,
+    submit_draft_path(@post),
+    method: :post,
+    data: { turbo_method: :post },
+    class: "btn btn-success me-3" \
+  )
+
+  = link_to( \
+    "Отредактировать",
+    edit_post_path(@post),
+    class: "btn btn-secondary me-3" \
+  )
+  = link_to( \
+    "Удалить черновик",
+    draft_path(@post),
+    method: :delete,
+    data: { turbo_method: :delete },
+    class: "btn btn-danger" \
+  )

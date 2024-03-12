@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        login: Логин
+        password: Пароль
+        first_name: Имя
+        last_name: Фамилия
+        middle_name: Отчество
+        region: Округ
+        password_confirmation: Подтверждение пароля
+        remember_me: Запомнить меня
+      post:
+        title: Заголовок
+        content: Содержание
+        images: Изображения
+        region: Регион

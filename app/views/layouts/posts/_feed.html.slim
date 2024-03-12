@@ -1,0 +1,17 @@
+ul
+  - posts.each do |post|
+    li.mb-3
+      article.card
+        .card-body
+          h2.h5
+            = link_to post.title,
+              post,
+              class: "link-dark text-decoration-none"
+          p.mb-3 = post.content.truncate_words 30
+
+          .small.text-muted
+            - if current_user.admin?
+              b.me-2 = post.region.name
+            span.me-2 = post.creator.full_name
+            span.me-2 = time_ago_in_words post.created_at
+            span = post.status_in_words

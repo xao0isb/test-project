@@ -1,0 +1,22 @@
+h1.text-center Добавить нового администратора
+
+= form_tag( \
+    new_admin_path,
+    method: :post,
+    data: { turbo: false },
+    class: "simple_form mt-4" \
+  ) do
+  = select_tag( \
+    :id,
+    options_for_select(@select_options),
+    id: "select",
+    class: "form-select" \
+  )
+  = link_to( \
+    "Добавить",
+    admins_path,
+    id: "addAdminLink",
+    class: "btn btn-primary mt-2" \
+  )
+
+  = javascript_include_tag "views/admins/new"
