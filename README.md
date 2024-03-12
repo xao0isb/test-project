@@ -47,3 +47,5 @@ rspec
 bundle exec rubocop
 slim-lint app/views/
 ```
+
+Логин и пароль для администратора: `admin`.
